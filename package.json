@@ -1,6 +1,6 @@
 {
   "name": "nestjs-resend",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "NestJS provider for sending emails with resend",
   "author": "paullee",
   "license": "MIT",
