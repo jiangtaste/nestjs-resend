@@ -101,7 +101,7 @@ export class YourService {
     });
 
     // react
-    await resend.emails.send({
+    await this.resendService.send({
       from: 'you@example.com',
       to: 'user@gmail.com',
       subject: 'hello world',
@@ -109,7 +109,7 @@ export class YourService {
     });
 
     // To include a friendly name, use the format "Your Name <sender@domain.com>"
-    await resend.emails.send({
+    await this.resendService.send({
       from: 'Your Name <you@example.com>',
       to: 'user@gmail.com',
       subject: 'hello world',
@@ -120,4 +120,4 @@ export class YourService {
 
 ## License
 
-Nest is [MIT licensed](LICENSE).
+Nestjs-Resend is [MIT licensed](LICENSE).
