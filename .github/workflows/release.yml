@@ -1,0 +1,31 @@
+# PUBLISH NODE PACKAGES & RELEASE PACKAGE
+#
+# Publish this project into the node package
+# so can access and install from the aplication
+# Publish using npmjs.com
+# ***** NOTE *****
+# Every tag & release created will automatically create a new
+# version of packages
+
+name: Publish Node Package
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  publish-npm:
+    name: Publish to NPM Package
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org/
+      - run: npm ci
+      - run: npm run build
+      - run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
