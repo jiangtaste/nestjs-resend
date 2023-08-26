@@ -1,33 +1,20 @@
-import { Module } from '@nestjs/common';
-import { RESEND_CONFIGURATION } from './constants';
-import { Options, OptionsAsync } from './interface';
-import { ResendService } from './resend.service';
+import { Module } from '@nestjs/common'
+import { ResendOptions, ResendOptionsAsync } from './resend.interface'
+import { ResendCoreModule } from './resend-core.module'
 
 @Module({})
 export class ResendModule {
-  public static forRoot(options: Options) {
+  static forRoot(options: ResendOptions) {
     return {
       module: ResendModule,
-      providers: [
-        { provide: RESEND_CONFIGURATION, useValue: options },
-        ResendService,
-      ],
-      exports: [ResendService],
-    };
+      imports: [ResendCoreModule.forRoot(options)],
+    }
   }
 
-  public static forAsyncRoot(optionsAsync: OptionsAsync) {
+  static forRootAsync(options: ResendOptionsAsync) {
     return {
       module: ResendModule,
-      providers: [
-        {
-          provide: RESEND_CONFIGURATION,
-          useFactory: optionsAsync.useFactory,
-          inject: optionsAsync.inject || [],
-        },
-        ResendService,
-      ],
-      exports: [ResendService],
-    };
+      imports: [ResendCoreModule.forRootAsync(options)],
+    }
   }
 }
