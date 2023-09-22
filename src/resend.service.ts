@@ -1,26 +1,27 @@
-import { Inject, Injectable } from '@nestjs/common';
-import { Resend } from 'resend';
+import { Inject, Injectable } from '@nestjs/common'
+import { Resend } from 'resend'
 import {
   CreateEmailOptions,
   CreateEmailRequestOptions,
-} from 'resend/build/src/emails/interfaces';
-import { RESEND_CONFIGURATION } from './constants';
-import { Options } from './interface';
+} from 'resend/build/src/emails/interfaces'
+import { RESEND_CONFIGURATION_OPTIONS } from './resend.constant'
+import { ResendOptions } from './resend.interface'
 
 @Injectable()
-export class ResendService {
-  private readonly resend: Resend;
-
+export class ResendService extends Resend {
   constructor(
-    @Inject(RESEND_CONFIGURATION)
-    readonly configuration: Options,
+    @Inject(RESEND_CONFIGURATION_OPTIONS)
+    readonly options: ResendOptions,
   ) {
-    this.resend = new Resend(configuration.apiKey);
+    if (!(options && options.apiKey)) {
+      return
+    }
+
+    super(options.apiKey)
   }
 
-  // public
   public send = async (
     payload: CreateEmailOptions,
     options?: CreateEmailRequestOptions,
-  ) => this.resend.emails.send(payload, options);
+  ) => this.emails.send(payload, options)
 }

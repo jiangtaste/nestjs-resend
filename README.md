@@ -56,7 +56,7 @@ import { ResendModule } from 'nestjs-resend';
 
 @Module({
   imports: [
-    ResendModule.forAsyncRoot({
+    ResendModule.forRootAsync({
       useFactory: async () => ({
         apiKey: 'your resend api key',
       })
@@ -71,7 +71,7 @@ import { ResendModule } from 'nestjs-resend';
 
 ```typescript
 interface Options {
-  apiKey: string;
+  apiKey: string
 }
 ```
 
