@@ -1,8 +1,6 @@
-export {
-  CreateEmailOptions,
-  CreateEmailRequestOptions,
-  CreateEmailResponse,
-} from 'resend/build/src/emails/interfaces';
-export { Options, OptionsAsync } from './interface';
-export { ResendModule } from './resend.module';
-export { ResendService } from './resend.service';
+export * from 'resend/build/src/emails/interfaces'
+export * from 'resend/build/src/api-keys/interfaces'
+export * from './resend.constant'
+export * from './resend.interface'
+export * from './resend.module'
+export * from './resend.service'
