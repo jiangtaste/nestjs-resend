@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@nestjs/common':
     specifier: ^10.2.6
-    version: 10.3.3(reflect-metadata@0.1.13)(rxjs@7.8.1)
+    version: 10.3.5(reflect-metadata@0.1.13)(rxjs@7.8.1)
   resend:
     specifier: ^3.2.0
     version: 3.2.0
@@ -124,8 +124,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /@nestjs/common@10.3.3(reflect-metadata@0.1.13)(rxjs@7.8.1):
-    resolution: {integrity: sha512-LAkTe8/CF0uNWM0ecuDwUNTHCi1lVSITmmR4FQ6Ftz1E7ujQCnJ5pMRzd8JRN14vdBkxZZ8VbVF0BDUKoKNxMQ==}
+  /@nestjs/common@10.3.5(reflect-metadata@0.1.13)(rxjs@7.8.1):
+    resolution: {integrity: sha512-XWxbDf2ey/jAyEa3/XpckgfzJZ9j3I05ZkEFx7cAlebFuVKeq5UDDb5Sq9O7hMmbH9xdQj3pYT19SSj01hKeug==}
     peerDependencies:
       class-transformer: '*'
       class-validator: '*'
