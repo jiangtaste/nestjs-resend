@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common'
-import { ResendOptions, ResendOptionsAsync } from './resend.interface'
 import { ResendCoreModule } from './resend-core.module'
+import { ResendOptions, ResendOptionsAsync } from './resend.interface'
 
 @Module({})
 export class ResendModule {

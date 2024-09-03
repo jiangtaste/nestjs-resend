@@ -1,6 +1,6 @@
 {
   "name": "nestjs-resend",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "NestJS provider for sending emails with resend",
   "author": "paullee",
   "license": "MIT",
@@ -14,15 +14,15 @@
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\""
   },
   "dependencies": {
-    "@nestjs/common": "^10.2.6",
-    "resend": "^3.2.0",
+    "@nestjs/common": "^10.0.0",
+    "resend": "^4.0.0",
     "rxjs": "^7.8.1"
   },
   "devDependencies": {
-    "@types/node": "^20.6.3",
+    "@types/node": "^22.5.2",
     "@typescript-eslint/eslint-plugin": "^7.0.0",
     "@typescript-eslint/parser": "^6.7.2",
-    "eslint": "^8.49.0",
+    "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.0",
     "prettier": "^3.0.3",
@@ -30,10 +30,8 @@
     "typescript": "^5.2.2"
   },
   "peerDependencies": {
-    "@nestjs/common": "^10.0.5",
-    "@types/node": "^20.4.2",
-    "rxjs": "^7.8.1",
-    "typescript": "^5.1.6"
+    "@nestjs/common": "^10.0.0",
+    "rxjs": "^7.8.1"
   },
   "repository": {
     "type": "git",

@@ -1,7 +1,7 @@
-import { Global, Module, DynamicModule } from '@nestjs/common'
-import { ResendService } from './resend.service'
-import { ResendOptions, ResendOptionsAsync } from './resend.interface'
+import { DynamicModule, Global, Module } from '@nestjs/common'
 import { RESEND_CONFIGURATION_OPTIONS } from './resend.constant'
+import { ResendOptions, ResendOptionsAsync } from './resend.interface'
+import { ResendService } from './resend.service'
 
 @Global()
 @Module({
