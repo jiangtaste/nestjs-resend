@@ -1,9 +1,6 @@
 import { Inject, Injectable } from '@nestjs/common'
-import { Resend } from 'resend'
-import {
-  CreateEmailOptions,
-  CreateEmailRequestOptions,
-} from 'resend/build/src/emails/interfaces'
+import { CreateEmailOptions, CreateEmailRequestOptions, Resend } from 'resend'
+
 import { RESEND_CONFIGURATION_OPTIONS } from './resend.constant'
 import { ResendOptions } from './resend.interface'
 
