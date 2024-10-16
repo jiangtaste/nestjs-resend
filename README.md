@@ -17,6 +17,7 @@
 ## Features
 
 1. send email
+2. send batch emails
 
 ## Installation
 
@@ -75,7 +76,7 @@ interface Options {
 }
 ```
 
-## Calling Send Method
+## Send Email
 
 ```typescript
 import { ResendService } from 'nestjs-resend';
@@ -115,6 +116,49 @@ export class YourService {
       subject: 'hello world',
       react: <EmailTemplate firstName="John" product="MyApp" />,
     });
+  }
+```
+
+## Send Batch Emails
+
+```typescript
+import { ResendService } from 'nestjs-resend';
+
+@Injectable()
+export class YourService {
+  constructor(private readonly resendService: ResendService) {
+
+
+    await this.resendService.sendBatch([
+      // text
+      {
+        from: 'you@example.com',
+        to: 'user@gmail.com',
+        subject: 'hello world',
+        text: 'it works!',
+      },
+      // html
+      {
+        from: 'you@example.com',
+        to: 'user@gmail.com',
+        subject: 'hello world',
+        html: '<strong>it works!</strong>',
+      },
+      // react
+      {
+        from: 'you@example.com',
+        to: 'user@gmail.com',
+        subject: 'hello world',
+        react: <EmailTemplate firstName="John" product="MyApp" />,
+      },
+      // To include a friendly name, use the format "Your Name <sender@domain.com>"
+      {
+        from: 'Your Name <you@example.com>',
+        to: 'user@gmail.com',
+        subject: 'hello world',
+        react: <EmailTemplate firstName="John" product="MyApp" />,
+      }
+    ]);
   }
 ```
 
