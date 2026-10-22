@@ -21,6 +21,11 @@
 
 ## Installation
 
+Supports NestJS 11 and 12. NestJS 12 packages use ESM; this wrapper can be
+used from both CommonJS and ESM applications on Node.js 20.19+ or 22.12+
+(Node.js 21 is not supported). Node.js 24 LTS is recommended. See the
+[NestJS migration guide](https://docs.nestjs.com/migration-guide).
+
 ```bash
 # npm
 $ npm install nestjs-resend
@@ -72,9 +77,13 @@ import { ResendModule } from 'nestjs-resend';
 
 ```typescript
 interface Options {
-  apiKey: string
+  apiKey?: string
 }
 ```
+
+When `apiKey` is omitted, the Resend SDK reads `RESEND_API_KEY` from the
+environment. If neither is configured, application startup fails with the
+SDK's missing API key error.
 
 ## Send Email
 

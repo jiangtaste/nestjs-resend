@@ -31,7 +31,7 @@ Before contributing to this project please read all of the instruction below.
 
 Before you start contributing to the NestJS package, you need to have the following software installed on your system:
 
-- Node.js (LTS version)
+- Node.js 24 LTS (recommended; minimum Node.js 20.19+ or 22.12+, excluding Node.js 21)
 - npm (Node Package Manager)
 
 ### Fork the Repository
@@ -75,7 +75,9 @@ npm run build
 
 ### Unit Tests
 
-The NestJS package comes with a test suite to ensure the functionality is working as expected. Run the unit tests using the following command:
+The test suite builds the package, checks CommonJS and ESM consumer types, and
+tests NestJS module registration and SDK delegation without sending email. Run it
+using the following command:
 
 ```bash
 npm run test

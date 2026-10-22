@@ -1,13 +1,14 @@
 import { Inject, Injectable } from '@nestjs/common'
-import {
+import { Resend } from 'resend'
+import type {
   CreateBatchOptions,
+  CreateBatchRequestOptions,
   CreateEmailOptions,
   CreateEmailRequestOptions,
-  Resend,
 } from 'resend'
 
 import { RESEND_CONFIGURATION_OPTIONS } from './resend.constant'
-import { ResendOptions } from './resend.interface'
+import type { ResendOptions } from './resend.interface'
 
 @Injectable()
 export class ResendService extends Resend {
@@ -15,11 +16,7 @@ export class ResendService extends Resend {
     @Inject(RESEND_CONFIGURATION_OPTIONS)
     readonly options: ResendOptions,
   ) {
-    if (!(options && options.apiKey)) {
-      return
-    }
-
-    super(options.apiKey)
+    super(options?.apiKey)
   }
 
   public send = async (
@@ -29,6 +26,6 @@ export class ResendService extends Resend {
 
   public sendBatch = async (
     payload: CreateBatchOptions,
-    options?: CreateEmailRequestOptions,
+    options?: CreateBatchRequestOptions,
   ) => this.batch.send(payload, options)
 }

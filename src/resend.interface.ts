@@ -1,4 +1,4 @@
-import { ModuleMetadata } from '@nestjs/common'
+import type { FactoryProvider, ModuleMetadata } from '@nestjs/common'
 
 export interface ResendOptions {
   apiKey?: string
@@ -7,5 +7,5 @@ export interface ResendOptions {
 export interface ResendOptionsAsync extends Pick<ModuleMetadata, 'imports'> {
   name?: string
   useFactory: (...args: any[]) => ResendOptions | Promise<ResendOptions>
-  inject?: any[]
+  inject?: FactoryProvider<ResendOptions>['inject']
 }
