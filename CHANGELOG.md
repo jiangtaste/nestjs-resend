@@ -2,7 +2,7 @@
 
 All the change, feature and detail update for this project is documented on this file.
 
-## Unreleased
+## 1.1.1 - 2026-10-22
 
 - Build and test against NestJS 12.2.0 while retaining NestJS 11 support.
 - Use NodeNext module resolution for NestJS 12's ESM packages and verify both CommonJS and ESM consumers.
